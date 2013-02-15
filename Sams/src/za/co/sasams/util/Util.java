@@ -1,4 +1,4 @@
-package co.sasams.util;
+package za.co.sasams.util;
 
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.log4j.Logger;

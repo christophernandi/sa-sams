@@ -1,4 +1,4 @@
-package co.sasams.util;
+package za.co.sasams.util;
 
 /**
  * Created by IntelliJ IDEA.

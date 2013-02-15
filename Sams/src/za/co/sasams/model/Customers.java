@@ -1,4 +1,4 @@
-package co.sasams.model;
+package za.co.sasams.model;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;

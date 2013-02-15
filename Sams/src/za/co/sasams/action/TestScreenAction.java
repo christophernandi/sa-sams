@@ -1,4 +1,4 @@
-package co.sasams.action;
+package za.co.sasams.action;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import za.co.sasams.dto.TestScreenParameters;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class TestScreenAction {

@@ -1,12 +1,9 @@
-package co.sasams.test;
+package za.co.sasams.test;
 
 //import org.hibernate.mapping.Subclass;
 
-import za.co.sasams.test.*;
-
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Random;
 
 
 public class MysqlConnect {

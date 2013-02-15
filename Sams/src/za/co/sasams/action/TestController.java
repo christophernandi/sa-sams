@@ -1,4 +1,4 @@
-package co.sasams.action;
+package za.co.sasams.action;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

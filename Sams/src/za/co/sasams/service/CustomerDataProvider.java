@@ -1,4 +1,4 @@
-package co.sasams.service;
+package za.co.sasams.service;
 
 import org.springframework.stereotype.Repository;
 import za.co.sasams.model.Customers;

@@ -1,4 +1,4 @@
-package co.sasams.service;
+package za.co.sasams.service;
 
 /**
  * Created by IntelliJ IDEA.

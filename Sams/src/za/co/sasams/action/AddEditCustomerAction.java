@@ -1,15 +1,7 @@
-package co.sasams.action;
+package za.co.sasams.action;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import za.co.sasams.dto.AddEditCustomerParameters;
-import za.co.sasams.service.CustomerDataProvider;
 
 @Repository
 @SessionAttributes(value = "addEditCu")

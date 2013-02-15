@@ -1,4 +1,4 @@
-package co.sasams.action;
+package za.co.sasams.action;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;

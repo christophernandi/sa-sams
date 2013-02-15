@@ -6,6 +6,9 @@
       <element id="directory" name="web.war">
         <element id="artifact" artifact-name="Sams:war exploded" />
       </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="lib" />
+      </element>
     </root>
   </artifact>
 </component>

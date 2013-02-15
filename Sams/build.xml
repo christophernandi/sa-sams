@@ -1,0 +1,95 @@
+<project name="SAMS" basedir="." default="create-war">
+
+    <!-- Project settings -->
+
+
+    <property name="exploded" value="exploded"/>
+    <property name="classes" value="${exploded}/WEB-INF/classes"/>
+    <property name="test-classes" value="build/test/classes"/>
+    <property name="test-jsp-classes" value="build/test-jsp-classes"/>
+    <property name="images" value="${exploded}/WEB-INF/classes/reportImages"/>
+
+    <tstamp>
+        <format property="TODAY" pattern="dd MMM yy"/>
+    </tstamp>
+
+    <target name="clean" description="Nuke all generated files">
+        <delete dir="build"/>
+        <delete dir="exploded"/>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${classes}"/>
+    </target>
+
+    <target name="compile-java" depends="init,copy-web-resources">
+        <javac srcdir="src" destdir="${classes}" debug="true" includeantruntime="true">
+            <classpath>
+                <pathelement path="src"/>
+                <fileset dir="web/WEB-INF/lib" includes="*.jar"/>
+                <fileset dir="lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+        <copy todir="${classes}" verbose="false">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${test-classes}">
+            <fileset dir="src">
+                <include name="log4j.properties"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="test-jsp-compilation" depends="compile-java">
+        <copy todir="${test-jsp-classes}">
+            <fileset dir="web"/>
+        </copy>
+
+        <javac srcdir="${test-jsp-classes}/WEB-INF/src" destdir="${test-jsp-classes}/classes" debug="true"
+               excludes="**/*/menu_jsp.java, **/*Table_jsp.java, **/*TableRow_jsp.java">
+            <classpath>
+                <pathelement path="src"/>
+                <pathelement path="${classes}"/>
+                <fileset dir="web/WEB-INF/lib" includes="*.jar"/>
+                <fileset dir="lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+
+    <target name="create-war" depends="clean,compile-java"
+            description="Create deposita.war">
+        <mkdir dir="build"/>
+        <mkdir dir="build/artifacts"/>
+        <jar jarfile="build/artifacts/asams.war">
+            <fileset dir="exploded" excludes=".svn"/>
+        </jar>
+    </target>
+
+    <target name="copy-web-resources">
+        <copy todir="${exploded}">
+            <fileset dir="web"/>
+        </copy>
+    </target>
+
+    <target name="test-transactions-queries" depends="compile-java" description="Sent transaction tests">
+        <copy todir="${test-classes}">
+            <fileset dir="web/WEB-INF/">
+                <include name="*.xml"/>
+            </fileset>
+        </copy>
+        <java classname="za.co.deposita.cashops.test.TestTransactionQueries"
+              fork="true" failonerror="true">
+            <classpath>
+                <pathelement path="${classes}"/>
+                <pathelement path="${test-classes}"/>
+                <fileset dir="web/WEB-INF/lib" includes="*.jar"/>
+                <fileset dir="lib" includes="*.jar"/>
+            </classpath>
+            <jvmarg value="-Xdebug"/>
+        </java>
+    </target>
+</project>

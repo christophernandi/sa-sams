@@ -1,4 +1,4 @@
-package co.sasams.test;
+package za.co.sasams.test;
 
 import za.co.sasams.service.Food;
 

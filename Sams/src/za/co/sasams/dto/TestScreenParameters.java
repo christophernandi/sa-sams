@@ -1,4 +1,4 @@
-package co.sasams.dto;
+package za.co.sasams.dto;
 
 
 import za.co.sasams.util.Util;

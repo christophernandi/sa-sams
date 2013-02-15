@@ -1,4 +1,4 @@
-package co.sasams.model;
+package za.co.sasams.model;
 
 /**
  * Created by IntelliJ IDEA.

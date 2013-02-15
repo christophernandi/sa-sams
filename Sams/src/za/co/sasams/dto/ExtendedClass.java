@@ -1,4 +1,4 @@
-package co.sasams.dto;
+package za.co.sasams.dto;
 
 /**
  * Created by IntelliJ IDEA.

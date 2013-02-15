@@ -25,7 +25,9 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="web: dispatcher servlet context" profiles="" autodetected="true" />
+      </configuration>
     </facet>
     <facet type="javaeeApplication" name="javaEEApplication">
       <configuration>
@@ -42,7 +44,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7" level="application_server_libraries" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 7" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>
 
