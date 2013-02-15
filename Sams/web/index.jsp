@@ -11,6 +11,6 @@
     <title></title>
   </head>
   <body>
-
+  <a href="xmlTest.do">XML Test</a>
   </body>
 </html>

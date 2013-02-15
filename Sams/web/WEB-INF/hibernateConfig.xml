@@ -1,0 +1,97 @@
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    &lt;!&ndash; <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+        <property name="url" value="jdbc:hsqldb:hsql://localhost:9001"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+    </bean>&ndash;&gt;
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:jdbc.properties</value>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        &lt;!&ndash;<property name="initialSize" value="5"/>&ndash;&gt;
+        &lt;!&ndash;<property name="maxActive" value="10"/>&ndash;&gt;
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="za.co.sasams.model"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.connection.url">${jdbc.url}</prop>
+                <prop key="hibernate.connection.driver_class">${jdbc.driverClassName}</prop>
+                <prop key="hibernate.connection.username">${jdbc.username}</prop>
+                <prop key="hibernate.connection.password">${jdbc.password}</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        &lt;!&ndash;<property name="jpaVendorAdapter" ref="jpaVendorAdapter">&ndash;&gt;
+        <property name="jpaProperties">
+            <map>
+                <entry key="hibernate.dialect" value="${hibernate.dialect}"/>
+                <entry key="hibernate.show_sql" value="${hibernate.show_sql}"/>
+                <entry key="hibernate.format_sql" value="true"/>
+                &lt;!&ndash;<entry key="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}"/>&ndash;&gt;
+                <entry key="hibernate.cache.use_second_level_cache"
+                       value="false"/>
+                <entry key="hibernate.cache.use_query_cache" value="false"/>
+                &lt;!&ndash;<entry key="hibernate.cache.provider_class"
+                value="org.hibernate.cache.EhCacheProvider"/>&ndash;&gt;
+                &lt;!&ndash;<entry key="hibernate.transaction.auto_close_session" value="true"/>&ndash;&gt;
+                <entry key="hibernate.transaction.flush_before_completion" value="true"/>
+                <entry key="hibernate.connection.isolation" value="2"/>
+                <entry key="hibernate.connection.release_mode" value="auto"/>
+                <entry key="hibernate.current_session_context_class" value="jta"/>
+                <entry key="hibernate.transaction.manager_lookup_class"
+                       value="com.atomikos.icatch.jta.hibernate3.TransactionManagerLookup"/>
+            </map>
+        </property>
+    </bean>
+</beans>
+        &lt;!&ndash;Commented because of usin the map on top&ndash;&gt;
+
+        &lt;!&ndash;<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">&ndash;&gt;
+        &lt;!&ndash;<property name="database" value="MYSQL"/>&ndash;&gt;
+        &lt;!&ndash;<property name="showSql" value="${hibernate.show_sql}"/>&ndash;&gt;
+        &lt;!&ndash;<property name="generateDdl" value="false"/>&ndash;&gt;
+        &lt;!&ndash;<property name="databasePlatform" value="${hibernate.dialect}"/>&ndash;&gt;
+        &lt;!&ndash;</bean>&ndash;&gt;
+
+
+        &lt;!&ndash;
+
+ <entry key="hibernate.dialect" value="${hibernate.dialect}"/>
+ <entry key="hibernate.show_sql" value="${hibernate.show_sql}"/>
+ <entry key="hibernate.format_sql" value="true"/>
+         &lt;!&ndash;<entry key="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}"/>&ndash;&gt;
+ <entry key="hibernate.cache.use_second_level_cache"
+        value="false"/>
+ <entry key="hibernate.cache.use_query_cache" value="false"/>
+         &lt;!&ndash;<entry key="hibernate.cache.provider_class"
+         value="org.hibernate.cache.EhCacheProvider"/>&ndash;&gt;
+         &lt;!&ndash;<entry key="hibernate.transaction.auto_close_session" value="true"/>&ndash;&gt;
+ <entry key="hibernate.transaction.flush_before_completion" value="true"/>
+ <entry key="hibernate.connection.isolation" value="2"/>
+ <entry key="hibernate.connection.release_mode" value="auto"/>
+ <entry key="hibernate.current_session_context_class" value="jta"/>
+ <entry key="hibernate.transaction.manager_lookup_class"
+        value="com.atomikos.icatch.jta.hibernate3.TransactionManagerLookup"/>&ndash;&gt;
+-->

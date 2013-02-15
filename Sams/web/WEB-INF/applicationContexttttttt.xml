@@ -1,0 +1,28 @@
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+
+    &lt;!&ndash; Activates various annotations to be detected in bean classes &ndash;&gt;
+    <context:annotation-config/>
+
+    &lt;!&ndash; Scans the classpath for annotated components that will be auto-registered as Spring beans.
+For example @Controller and @Service. Make sure to set the correct base-package&ndash;&gt;
+    <context:component-scan base-package="za.co.sasams"/>
+
+    &lt;!&ndash; Configures the annotation-driven Spring MVC Controller programming model.
+    Note that, with Spring 3.0, this tag works in Servlet MVC only!  &ndash;&gt;
+    <mvc:annotation-driven/>
+
+    &lt;!&ndash; Load Hibernate related configuration &ndash;&gt;
+    &lt;!&ndash;<import resource="hibernateConfig.xml"/>&ndash;&gt;
+    &lt;!&ndash; Load Persistance related configuration&ndash;&gt;
+
+
+
+
+</beans>-->
