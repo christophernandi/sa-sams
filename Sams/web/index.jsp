@@ -7,10 +7,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title></title>
-  </head>
-  <body>
-  <a href="xmlTest.do">XML Test</a>
-  </body>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+<ul>
+    <li><a href="xmlTest.do">XML Test</a></li>
+    <li><a href="displayXml.do">Display Xml</a></li>
+    <li><a href="javaScriptTest.do">JavaScript Test</a></li>
+    <li><a href="parsingxml.do">Parisng Xml</a></li>
+    <li><a href="saxParser.do">Sax Parser</a></li>
+    <li><a href="readXml.do">Read Xml</a></li>
+    <li><a href="textJQuery.do">Text J Query</a></li>
+    <li><a href="jqueryTest.do">J Query Test</a></li>
+</ul>
+
+</body>
 </html>

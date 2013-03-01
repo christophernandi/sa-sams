@@ -89,9 +89,20 @@ public class ActionTest {
     public String ajax() {
         return "saxParser";
     }
-    @RequestMapping(value = "/dontKnow.do",method = RequestMethod.GET)
-    public String dontKnow(){
+
+    @RequestMapping(value = "/dontKnow.do", method = RequestMethod.GET)
+    public String dontKnow() {
         return "dontKnow";
+    }
+
+    @RequestMapping(value = "/textJQuery.do")
+    public String textJQuery() {
+        return "textJQuery";
+    }
+
+    @RequestMapping(value = "/jqueryTest.do", method = RequestMethod.GET)
+    public String jqueryTest() {
+        return "jqueryTest";
     }
 }
 

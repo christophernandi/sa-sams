@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
     <script type="text/javascript">
@@ -68,6 +66,7 @@
 <p>Select a file:
     <input type="file" id="data"/>
     <a href="#" onclick="loadXML()">Load</a>
+<input type="text" value="0" onchange="loadXML()"/>
 </p>
 
 </body>

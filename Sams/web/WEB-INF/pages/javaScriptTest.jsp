@@ -81,8 +81,11 @@
 <h3>HTML File Reader Test</h3>
 
 <p>Select a file:
+    <input type="text" value="0" onchange="loadXML()"/>
     <input type="file" id="data"/>
     <a href="#" onclick="load()">Load</a>
+
+
 </p>
 
 <p>
